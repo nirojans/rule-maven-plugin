@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<artifactType type="application/vnd.wso2-buildrule+xml" shortName="buildrule" singularLabel="Build Rule" pluralLabel="Build Rules" hasNamespace="false" iconSet="27">
+    <storagePath>/trunk/buidlrules/@{overview_name}/@{overview_version}</storagePath>
+    <nameAttribute>overview_name</nameAttribute>
+    <lifecycle>RuleLifeCycle</lifecycle>
+    <ui>
+        <list>
+            <column name="Rule Name">
+                <data type="path" value="overview_name" href="@{storagePath}"/>
+            </column>
+            <column name="Category">
+                <data type="text" value="overview_category"/>
+            </column>
+        </list>
+    </ui>
+    <content>
+        <table name="Overview">
+            <field type="text" required="true">
+                <name>Provider</name>
+            </field>
+            <field type="text" required="true">
+                <name>Name</name>
+            </field>
+            <field type="text" required="true">
+                <name>Version</name>
+            </field>
+            <field type="options">
+                <name>Category</name>
+                <values>
+                    <value>Default</value>
+                    <value>Explicit</value>
+                </values>
+            </field>
+            <field type="options">
+                <name>Type</name>
+                <values>
+                    <value>Plugin</value>
+                    <value>Script</value>
+                </values>
+            </field>
+            <field type="text-area">
+                <name>Definition</name>
+            </field>
+            <field type="text-area">
+                <name>Description</name>
+            </field>
+
+        </table>
+
+        <table name="Images">
+            <field type="text" required="true">
+                <name>Thumbnail</name>
+            </field>
+            <field type="text" required="true">
+                <name>Banner</name>
+            </field>
+        </table>
+    </content>
+</artifactType>
